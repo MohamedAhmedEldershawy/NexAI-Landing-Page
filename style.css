@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* خلفية غامقة */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8); /* شفاف */
+    backdrop-filter: blur(10px); /* تأثير الزجاج */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span { color: #8b5cf6; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+/* --- Buttons --- */
+.btn-primary {
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 8% 100px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hero-content { max-width: 600px; z-index: 2; }
+
+.badge {
+    background: rgba(139, 92, 246, 0.1);
+    color: #c4b5fd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+
+/* --- Hero Visual (الرسمة الجمالية) --- */
+.hero-visual {
+    position: relative;
+    width: 500px;
+    height: 400px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+}
+
+.c1 {
+    width: 300px;
+    height: 300px;
+    background: #8b5cf6;
+    top: -50px;
+    right: 50px;
+    opacity: 0.4;
+}
+
+.c2 {
+    width: 250px;
+    height: 250px;
+    background: #3b82f6;
+    bottom: -50px;
+    left: 0;
+    opacity: 0.4;
+}
+
+.card-glass {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.loading-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.loading-bar span {
+    display: block;
+    height: 100%;
+    width: 60%;
+    background: #8b5cf6;
+    animation: load 2s infinite ease-in-out;
+}
+
+@keyframes load {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .hero { flex-direction: column; text-align: center; padding-top: 120px; }
+    .hero-visual { display: none; } /* نخفي الرسمة في الموبايل للتسهيل */
+    .nav-links { display: none; } /* ممكن نعملها همبرغر منيو بعدين */
+}
+/* --- General Section Styles --- */
+.section-padding {
+    padding: 100px 8%;
+}
+
+.bg-darker {
+    background-color: #0b1120; /* لون أغمق سنة للفصل بين السكاشن */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.section-title p { color: #94a3b8; }
+
+/* --- Features Grid --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #8b5cf6; /* يلمع بنفسجي لما تقف عليه */
+    box-shadow: 0 10px 40px rgba(139, 92, 246, 0.1);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+.feature-card p { color: #94a3b8; line-height: 1.6; }
+
+/* --- Pricing --- */
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* الكارت المميز (Popular) */
+.price-card.popular {
+    border: 1px solid #8b5cf6;
+    background: rgba(139, 92, 246, 0.05);
+    transform: scale(1.05); /* أكبر شوية */
+    z-index: 10;
+}
+
+.badge-pop {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #8b5cf6;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.price span { font-size: 1rem; color: #94a3b8; font-weight: 400; }
+
+.price-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.price-card ul li { margin-bottom: 15px; color: #cbd5e1; }
+
+.price-card .btn-primary, .price-card .btn-secondary { width: 100%; display: block; margin: 0; }
+
+/* --- Footer --- */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 50px 8%;
+    background: #0f172a;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.socials a:hover { color: #8b5cf6; }
+
+/* Responsive Pricing */
+@media (max-width: 768px) {
+    .price-card.popular { transform: scale(1); } /* نلغي التكبير في الموبايل */
+    .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+    .socials a { margin: 0 10px; }
+}
